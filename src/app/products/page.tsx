@@ -7,6 +7,12 @@ export const revalidate = 15;
 export const metadata = {
     title: "Products"
 }
+interface Product {
+  id: number
+  title: string
+  price: number
+  category?: string
+}
 
 interface Props {
     searchParams: {
@@ -20,7 +26,7 @@ async function Page({ searchParams }: Props) {
     const { category, sort } = await searchParams ?? {}
     const filteredValue = category ?? "all"
 
-    let products = filteredValue === "all"
+    let products:Product[] = filteredValue === "all"
         ? await getAllProducts()
         : await getProductByCategories(filteredValue)
 
