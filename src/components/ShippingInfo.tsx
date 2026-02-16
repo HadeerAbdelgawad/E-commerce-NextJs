@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 interface ShippingInfoProps {
@@ -76,12 +77,13 @@ const ShippingInfo = ({ subtotal, shippingMethod }: ShippingInfoProps) => {
             ${total.toFixed(2)}
           </span>
         </div>
-        <button
-          className="mt-4 w-full py-2 font-semibold shadow-2xl shadow-gray-200 hover:cursor-pointer rounded-2xl "
+        <Link
+          href={'/orderHistory'}
+          className="mt-4 block text-center w-full py-2 font-semibold shadow-2xl shadow-gray-200 hover:cursor-pointer rounded-2xl "
           style={{ backgroundColor: '#EFE9E3'}}
         >
           Proceed to Checkout
-        </button>
+        </Link>
       </div>
     </aside>
   );

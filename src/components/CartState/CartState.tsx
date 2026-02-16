@@ -37,6 +37,7 @@ function CartState() {
     const removeFromCart = (id: number) => {
         const updatedCart = cart.filter((item) => item.id !== id);
         updateCartMutation.mutate(updatedCart)
+        window.location.reload()
         
     }
 
@@ -45,6 +46,7 @@ function CartState() {
             item.id === id ? { ...item, quantity: (item.quantity ?? 0) + 1 } : item
         );
         updateCartMutation.mutate(updatedCart);
+        window.location.reload()
     }
 
     const decreaseQuantity = (id: number) => {
@@ -53,6 +55,7 @@ function CartState() {
                 : item
         );
         updateCartMutation.mutate(updatedCart);
+        window.location.reload()
     }
 
 

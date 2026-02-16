@@ -4,6 +4,7 @@ import categoryImg from '../../public/category.png'
 import Image from 'next/image';
 
 
+
 async function CategoryList() {
     const res = await getProductCategories()
     console.log(res);
